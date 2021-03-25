@@ -8,24 +8,37 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h1>Paint Your Shapes</h1>
     <div class="container" id="btn-container">
       <div>
-        <input type="text" name="" id="rect-wdth" />
-        <input type="text" name="" id="rect-hght" />
-        <button class="btn" id="rect-btn"></button>
+        <h2>Rectangle</h2>
+        <input type="number" id="rect-wdth" placeholder="Rectangle Width" />
+        <input type="number" id="rect-hght" placeholder="Rectangle Height" />
+        <button class="btn" id="rect-btn">Submit</button>
       </div>
       <div>
-        <input type="text" name="" id="sqr-lngth" />
-        <button class="btn" id="sqr-btn"></button>
+        <h2>Square</h2>
+        <input type="number" id="sqr-lngth" placeholder="Square Length" />
+        <button class="btn" id="sqr-btn">Submit</button>
       </div>
       <div>
-        <input type="text" id="crcl-rds" />
-        <button class="btn" id="crcl-btn"></button>
+        <h2>Circle</h2>
+        <input type="number" id="crcl-rds" placeholder="Circle Radius" />
+        <button class="btn" id="crcl-btn">Submit</button>
       </div>
       <div>
-        <input type="text" id="trngl-hght" />
-        <button class="btn" id="trngl-btn"></button>
+        <h2>Triangle</h2>
+        <input type="number" id="trngl-hght" placeholder="Triangle Height" />
+        <button class="btn" id="trngl-btn">Submit</button>
       </div>
+    </div>
+    <div class="side-bar">
+      <p>Shape: <span>Test</span></p>
+      <p>Width: <span>test</span></p>
+      <p>Height: <span>test</span></p>
+      <p>Radius: <span>Test</span></p>
+      <p>Area: <span>test</span></p>
+      <p>Perimeter: <span>test</span></p>
     </div>
     <div class="canvas"></div>
     <script src="script.js"></script>
