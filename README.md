@@ -20,7 +20,7 @@ The purpose of this lab is to help solidify the OOP Class inheritance concepts y
   - Rectangle: Inputs for width and height, and an insert button
   - Square: Input for side length and an insert button
   - Circle: Input for radius and an insert button
-  - Isoceles Right Triangle: Input for height and an insert button
+  - Isosceles Right Triangle: Input for height and an insert button
 - Each of the insert buttons above should create a new instance of that particular shape, which should draw itself on the screen with the specified size and placed in a random location (object details are below)
 - Create a 600px by 600px div with the background color of your choosing. All the shapes you insert will be drawn within this div
 - Show a sidepanel beside this shape canvas. It should display the following information for a clicked shape:
@@ -72,7 +72,7 @@ The purpose of this lab is to help solidify the OOP Class inheritance concepts y
 - It may help to review relative vs absolute positioning, and how `top` and `left` can be used to specify the location of an html element
 - You may find [this guide](https://css-tricks.com/examples/ShapesOfCSS/) helpful for drawing shapes with CSS (For triangle, use Top-Left, Top-Right, Bottom-Left, or Bottom-Right)
 - Triangle area: `0.5 * base * height`
-- Triangle perimeter (right isoceles): `2 * height + (square root of 2) * height`
+- Triangle perimeter (right isosceles): `2 * height + (square root of 2) * height`
 
 ### Demo
 
