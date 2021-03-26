@@ -34,7 +34,7 @@ h2 {
   margin-right: auto;
   height: 600px;
   width: 600px;
-  background-color: gray;
+  position: relative;
 }
 
 .side-bar {
@@ -50,17 +50,23 @@ p {
 }
 
 .circle {
+  position: sticky;
   background-color: purple;
+  border-radius: 50%;
 }
 
 .square {
+  position: sticky;
   background-color: red;
 }
 
 .triangle {
-  background-color: yellow;
+  position: sticky;
+  height: 0;
+  width: 0;
 }
 
 .rectangle {
+  position: sticky;
   background-color: green;
 }
