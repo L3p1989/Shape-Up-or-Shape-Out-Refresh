@@ -48,3 +48,19 @@ p {
   font-weight: bolder;
   font-size: larger;
 }
+
+.circle {
+  background-color: purple;
+}
+
+.square {
+  background-color: red;
+}
+
+.triangle {
+  background-color: yellow;
+}
+
+.rectangle {
+  background-color: green;
+}
