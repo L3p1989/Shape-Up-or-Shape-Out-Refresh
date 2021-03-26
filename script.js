@@ -33,6 +33,15 @@ class Shape {
     let sum = Math.floor(Math.random() * (max - min + 1) + min);
     return sum;
   };
+
+  clearTxt() {
+    shapeTxt.textContent = "";
+    shapeWidth.textContent = "";
+    shapeHeight.textContent = "";
+    shapeRadius.textContent = "";
+    shapeArea.textContent = "";
+    shapePerimeter.textContent = "";
+  }
 }
 
 class Circle extends Shape {
@@ -47,6 +56,7 @@ class Circle extends Shape {
     this.newCircle.style.top = `${this.calcY()}px`;
 
     this.newCircle.addEventListener("click", () => {
+      this.clearTxt();
       const diameter = radius * 2;
       const circleTxt = document.createTextNode(`${this.constructor.name}`);
       shapeTxt.appendChild(circleTxt);
@@ -65,5 +75,37 @@ class Circle extends Shape {
     });
 
     canvas.appendChild(this.newCircle);
+  }
+}
+
+class Triangle extends Shape {
+  constructor(height) {
+    super(height, height);
+
+    this.newTriangle = document.createElement("div");
+    this.newTriangle.classList.add("triangle");
+    this.newTriangle.style.borderLeft = `${height}px solid transparent`;
+    this.newTriangle.style.borderRight = `${height}px solid transparent`;
+    this.newTriangle.style.borderBottom = `${height}px solid yellow`;
+    this.newTriangle.style.left = `${this.calcX()}px`;
+    this.newTriangle.style.top = `${this.calcY()}px`;
+
+    this.newTriangle.addEventListener("click", () => {
+      this.clearTxt();
+      const triangleTxt = document.createTextNode(this.constructor.name);
+      shapeTxt.appendChild(triangleTxt);
+      const heightTxt = document.createTextNode(height);
+      shapeHeight.appendChild(heightTxt);
+      const widthTxt = document.createTextNode(height);
+      shapeWidth.appendChild(widthTxt);
+      const area = Math.round(0.5 * height * height);
+      const areaTxt = document.createTextNode(area);
+      shapeArea.appendChild(areaTxt);
+      const perimeter = Math.round(2 * height + 1.41421356237 * height);
+      const perimeterTxt = document.createTextNode(perimeter);
+      shapePerimeter.appendChild(perimeterTxt);
+    });
+
+    canvas.appendChild(this.newTriangle);
   }
 }
