@@ -172,13 +172,13 @@ rectBtn.addEventListener("click", () => {
     rectWdth.value = "";
   };
   if (rectHght.value === "" || rectWdth.value === "") {
-    return alert("You didn't add any values!");
+    return alert("No values detected!");
   } else if (rectHght.value === rectWdth.value) {
-    alert("Values can't be the same if you want a rectangle!");
+    alert("Invalid values detected!");
     return clearVal();
   }
   if (rectHght.value < 0 || rectWdth.value < 0) {
-    alert("You can't use negative numbers!");
+    alert("Invalid value detected!");
     return clearVal();
   } else {
     new Rectangle(rectHght.value, rectWdth.value);
@@ -186,4 +186,17 @@ rectBtn.addEventListener("click", () => {
   }
 });
 
-//sqrBtn.addEventListener("click");
+sqrBtn.addEventListener("click", () => {
+  let clearVal = () => {
+    sqrLngth.value = "";
+  };
+  if (sqrLngth.value === "") {
+    return alert("No value detected!");
+  } else if (sqrLngth.value < 0) {
+    alert("Invalid value detected!");
+    return clearVal();
+  } else {
+    new Square(sqrLngth.value);
+    return clearVal();
+  }
+});
