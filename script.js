@@ -167,14 +167,23 @@ class Square extends Shape {
 }
 
 rectBtn.addEventListener("click", () => {
+  let clearVal = () => {
+    rectHght.value = "";
+    rectWdth.value = "";
+  };
   if (rectHght.value === "" || rectWdth.value === "") {
     return alert("You didn't add any values!");
   } else if (rectHght.value === rectWdth.value) {
-    return alert("That's a square!");
+    alert("Values can't be the same if you want a rectangle!");
+    return clearVal();
   }
   if (rectHght.value < 0 || rectWdth.value < 0) {
-    return alert("You can't use negative numbers!");
+    alert("You can't use negative numbers!");
+    return clearVal();
   } else {
-    return new Rectangle(rectHght.value, rectHght.value);
+    new Rectangle(rectHght.value, rectWdth.value);
+    return clearVal();
   }
 });
+
+//sqrBtn.addEventListener("click");
