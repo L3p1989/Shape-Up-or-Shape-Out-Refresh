@@ -72,6 +72,7 @@ class Circle extends Shape {
 
     this.newCircle.addEventListener("dblclick", () => {
       this.newCircle.remove();
+      this.clearTxt();
     });
 
     canvas.appendChild(this.newCircle);
@@ -106,6 +107,13 @@ class Triangle extends Shape {
       shapePerimeter.appendChild(perimeterTxt);
     });
 
+    this.newTriangle.addEventListener("dblclick", () => {
+      this.newTriangle.remove();
+      this.clearTxt();
+    });
+
     canvas.appendChild(this.newTriangle);
   }
 }
+
+let testTriangle = new Triangle(75);
