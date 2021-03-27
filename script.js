@@ -115,5 +115,3 @@ class Triangle extends Shape {
     canvas.appendChild(this.newTriangle);
   }
 }
-
-let testTriangle = new Triangle(75);
