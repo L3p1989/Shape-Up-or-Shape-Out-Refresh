@@ -58,16 +58,10 @@ class Circle extends Shape {
     this.newCircle.addEventListener("click", () => {
       this.clearTxt();
       const diameter = radius * 2;
-      const circleTxt = document.createTextNode(`${this.constructor.name}`);
-      shapeTxt.appendChild(circleTxt);
-      const radiusTxt = document.createTextNode(radius);
-      shapeRadius.appendChild(radiusTxt);
-      const circlePerimeter = Math.round(diameter * Math.PI);
-      const perimeterTxt = document.createTextNode(circlePerimeter);
-      shapePerimeter.appendChild(perimeterTxt);
-      const circleArea = Math.round(radius * radius * Math.PI);
-      const areaTxt = document.createTextNode(circleArea);
-      shapeArea.appendChild(areaTxt);
+      shapeTxt.textContent = `${this.constructor.name}`;
+      shapeRadius.textContent = `${radius}`;
+      shapePerimeter.textContent = `${Math.round(diameter * Math.PI)}`;
+      shapeArea.textContent = `${Math.round(radius * radius * Math.PI)}`;
     });
 
     this.newCircle.addEventListener("dblclick", () => {
@@ -93,18 +87,13 @@ class Triangle extends Shape {
 
     this.newTriangle.addEventListener("click", () => {
       this.clearTxt();
-      const triangleTxt = document.createTextNode(this.constructor.name);
-      shapeTxt.appendChild(triangleTxt);
-      const heightTxt = document.createTextNode(height);
-      shapeHeight.appendChild(heightTxt);
-      const widthTxt = document.createTextNode(height);
-      shapeWidth.appendChild(widthTxt);
-      const area = Math.round(0.5 * height * height);
-      const areaTxt = document.createTextNode(area);
-      shapeArea.appendChild(areaTxt);
-      const perimeter = Math.round(2 * height + 1.41421356237 * height);
-      const perimeterTxt = document.createTextNode(perimeter);
-      shapePerimeter.appendChild(perimeterTxt);
+      shapeTxt.textContent = `${this.constructor.name}`;
+      shapeHeight.textContent = `${height}`;
+      shapeWidth.textContent = `${height}`;
+      shapeArea.textContent = `${Math.round(0.5 * height * height)}`;
+      shapePerimeter.textContent = `${Math.round(
+        2 * height + 1.41421356237 * height
+      )}`;
     });
 
     this.newTriangle.addEventListener("dblclick", () => {
@@ -113,5 +102,34 @@ class Triangle extends Shape {
     });
 
     canvas.appendChild(this.newTriangle);
+  }
+}
+
+class Rectangle extends Shape {
+  constructor(height, width) {
+    super(height, width);
+
+    this.newRectangle = document.createElement("div");
+    this.newRectangle.classList.add("rectangle");
+    this.newRectangle.style.height = `${height}px`;
+    this.newRectangle.style.width = `${width}px`;
+    this.newRectangle.style.left = `${this.calcX()}px`;
+    this.newRectangle.style.top = `${this.calcY()}px`;
+
+    this.newRectangle.addEventListener("click", () => {
+      this.clearTxt();
+      shapeTxt.textContent = `${this.constructor.name}`;
+      shapeWidth.textContent = `${width}`;
+      shapeHeight.textContent = `${height}`;
+      shapeArea.textContent = `${height * width}`;
+      shapePerimeter.textContent = `${width * 2 + height * 2}`;
+    });
+
+    this.newRectangle.addEventListener("dblclick", () => {
+      this.newRectangle.remove();
+      this.clearTxt();
+    });
+
+    canvas.appendChild(this.newRectangle);
   }
 }
