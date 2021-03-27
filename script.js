@@ -187,9 +187,7 @@ rectBtn.addEventListener("click", () => {
 });
 
 sqrBtn.addEventListener("click", () => {
-  let clearVal = () => {
-    sqrLngth.value = "";
-  };
+  let clearVal = () => (sqrLngth.value = "");
   if (sqrLngth.value === "") {
     return alert("No value detected!");
   } else if (sqrLngth.value < 0) {
@@ -197,6 +195,19 @@ sqrBtn.addEventListener("click", () => {
     return clearVal();
   } else {
     new Square(sqrLngth.value);
+    return clearVal();
+  }
+});
+
+crclBtn.addEventListener("click", () => {
+  let clearVal = () => (crclRds.value = "");
+  if (crclRds.value === "") {
+    return alert("No value detected!");
+  } else if (crclRds.value < 0) {
+    alert("Invalid value detected!");
+    return clearVal();
+  } else {
+    new Circle(crclRds.value);
     return clearVal();
   }
 });
