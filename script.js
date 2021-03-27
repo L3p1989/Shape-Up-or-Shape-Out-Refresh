@@ -1,16 +1,19 @@
 const shapeTxt = document.getElementById("shape-txt");
-
 const shapeWidth = document.getElementById("width-txt");
-
 const shapeHeight = document.getElementById("height-txt");
-
 const shapeRadius = document.getElementById("radius-txt");
-
 const shapeArea = document.getElementById("area-txt");
-
 const shapePerimeter = document.getElementById("perimeter-txt");
-
 const canvas = document.getElementById("shape-canvas");
+const rectWdth = document.getElementById("rect-wdth");
+const rectHght = document.getElementById("rect-hght");
+const rectBtn = document.getElementById("rect-btn");
+const sqrLngth = document.getElementById("sqr-lngth");
+const sqrBtn = document.getElementById("sqr-btn");
+const crclRds = document.getElementById("crcl-rds");
+const crclBtn = document.getElementById("crcl-btn");
+const trnglHght = document.getElementById("trngl-hght");
+const trnglBtn = document.getElementById("trngl-btn");
 
 class Shape {
   constructor(height, width) {
@@ -162,3 +165,16 @@ class Square extends Shape {
     canvas.appendChild(this.newSquare);
   }
 }
+
+rectBtn.addEventListener("click", () => {
+  if (rectHght.value === "" || rectWdth.value === "") {
+    return alert("You didn't add any values!");
+  } else if (rectHght.value === rectWdth.value) {
+    return alert("That's a square!");
+  }
+  if (rectHght.value < 0 || rectWdth.value < 0) {
+    return alert("You can't use negative numbers!");
+  } else {
+    return new Rectangle(rectHght.value, rectHght.value);
+  }
+});
