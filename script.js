@@ -133,3 +133,32 @@ class Rectangle extends Shape {
     canvas.appendChild(this.newRectangle);
   }
 }
+
+class Square extends Shape {
+  constructor(length) {
+    super(length, length);
+
+    this.newSquare = document.createElement("div");
+    this.newSquare.classList.add("square");
+    this.newSquare.style.height = `${length}px`;
+    this.newSquare.style.width = `${length}px`;
+    this.newSquare.style.left = `${this.calcX()}px`;
+    this.newSquare.style.top = `${this.calcY()}px`;
+
+    this.newSquare.addEventListener("click", () => {
+      this.clearTxt();
+      shapeTxt.textContent = `${this.constructor.name}`;
+      shapeWidth.textContent = `${length}`;
+      shapeHeight.textContent = `${length}`;
+      shapeArea.textContent = `${length * length}`;
+      shapePerimeter.textContent = `${length * 2 + length * 2}`;
+    });
+
+    this.newSquare.addEventListener("dblclick", () => {
+      this.newSquare.remove();
+      this.clearTxt();
+    });
+
+    canvas.appendChild(this.newSquare);
+  }
+}
