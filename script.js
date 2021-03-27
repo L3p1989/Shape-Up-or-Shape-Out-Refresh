@@ -211,3 +211,16 @@ crclBtn.addEventListener("click", () => {
     return clearVal();
   }
 });
+
+trnglBtn.addEventListener("click", () => {
+  let clearVal = () => (trnglHght.value = "");
+  if (trnglHght.value === "") {
+    return alert("No Value Detected");
+  } else if (trnglHght.value < 0) {
+    alert("Invalid value detected!");
+    return clearVal();
+  } else {
+    new Triangle(trnglHght.value);
+    return clearVal();
+  }
+});
