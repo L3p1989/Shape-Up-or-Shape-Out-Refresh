@@ -24,7 +24,7 @@ class Shape {
   calcX = () => {
     let min = 362;
     let max = 942;
-    //sum is range between 362 and 942
+    //sum is range between 362 and 942 fo px/ Can use 25-75 for %
     let sum = Math.floor(Math.random() * (max - min + 1) + min);
     return sum;
   };
@@ -32,7 +32,7 @@ class Shape {
   calcY = () => {
     let min = 223;
     let max = 797;
-    //sum is range between 223 and 797
+    //sum is range between 223 and 797 for px/ can use 20-85 for %
     let sum = Math.floor(Math.random() * (max - min + 1) + min);
     return sum;
   };
